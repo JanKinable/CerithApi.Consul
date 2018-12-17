@@ -1,0 +1,10 @@
+version: '3.5'
+services:
+    cerithapi:
+        build: .
+        image: cerithapi:dev
+        ports:
+        - "60000:60000"
+        environment:
+        - "CERITH_CONFIG_KEY=cerith.nucleus.dev"
+        container_name: cerithapi-dev2

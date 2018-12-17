@@ -1,0 +1,77 @@
+﻿{
+  "MongoConnectionString": "mongodb://host.docker.internal:27017",
+  //"MongoConnectionString": "mongodb://localhost:27017",
+  //"MongoConnectionString": "mongodb://nucleus:27017",
+  "Collections": [
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "structure",
+      "Routes": {
+        "GetList": "/api/structures/",
+        "GetById": "/api/structures/{_id:guid}",
+        "Create": "/api/structures/",
+        "Update": "/api/structures/{_id:guid}"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "structure-metadata",
+      "Routes": {
+        "GetList": "/api/structures/metadata/",
+        "GetById": "/api/structures/{_id:guid}/metadata",
+        "Create": "/api/structures/metadata",
+        "Update": "/api/structures/{_id:guid}/metadata"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "story",
+      "Routes": {
+        "GetList": "/api/stories/",
+        "GetById": "/api/stories/{_id:guid}/",
+        "Create": "/api/stories/",
+        "Update": "/api/stories/{_id:guid}"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "story-correlation",
+      "Routes": {
+        "GetList": "/api/stories/correlations/",
+        "GetById": "/api/stories/{_id:guid}/correlations/",
+        "Create": "/api/stories/correlations/",
+        "Update": "/api/stories/{_id:guid}/correlations/"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "story-metadata",
+      "Routes": {
+        "GetList": "/api/stories/metadata/",
+        "GetById": "/api/stories/{_id:guid}/metadata/",
+        "Create": "/api/stories/metadata/",
+        "Update": "/api/stories/{_id:guid}/metadata/"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "story-permissions",
+      "Routes": {
+        "GetList": "/api/stories/permissions/",
+        "GetById": "/api/stories/{_id:guid}/permissions/",
+        "Create": "/api/stories/permissions/",
+        "Update": "/api/stories/{_id:guid}/permissions/"
+      }
+    },
+    {
+      "DatabaseName": "nucleus-test",
+      "Name": "story-teaser",
+      "Routes": {
+        "GetList": "/api/stories/teaser/",
+        "GetById": "/api/stories/{_id:guid}/teaser/",
+        "Create": "/api/stories/teaser/",
+        "Update": "/api/stories/{_id:guid}/teaser/"
+      }
+    }
+  ]
+}
