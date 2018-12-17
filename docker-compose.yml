@@ -7,4 +7,5 @@ services:
         - "60000:60000"
         environment:
         - "CERITH_CONFIG_KEY=cerith.nucleus.dev"
+        - "CONSUL_URL=http://host.docker.internal:8501/"
         container_name: cerithapi-dev2

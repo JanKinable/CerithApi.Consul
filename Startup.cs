@@ -30,7 +30,10 @@ namespace cerithapi
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
-            
+
+            var consulUrl = Environment.GetEnvironmentVariable("CONSUL_URL");
+            if (string.IsNullOrEmpty(consulUrl)) consulUrl = "http://host.docker.internal:8501/";
+
             var cerithConfigKey = Environment.GetEnvironmentVariable("CERITH_CONFIG_KEY");
             if (string.IsNullOrEmpty(cerithConfigKey))
             {
@@ -49,7 +52,7 @@ namespace cerithapi
                     {
                         options.ReloadOnChange = true;
                         options.ConsulConfigurationOptions = configuration =>
-                            configuration.Address = new Uri("http://host.docker.internal:8501/");
+                            configuration.Address = new Uri(consulUrl);
                     });
             }
 
